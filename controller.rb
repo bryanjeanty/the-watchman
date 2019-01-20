@@ -51,7 +51,7 @@ post '/dashboard' do
     redirect '/dashboard'
 end
 
-post '/signout' do
+get '/signout' do
     session[:user_id] = nil
     redirect '/'
 end
