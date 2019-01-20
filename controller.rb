@@ -1,4 +1,7 @@
 require 'sinatra'
+require 'sinatra/activerecord'
+require 'sinatra/flash'
+require './models'
 
 get '/' do
     erb(:index)
