@@ -15,7 +15,14 @@ get '/signin' do
 end
 
 post '/signin' do
-    redirect '/dashboard'
+    user = User.find_by(username: params[:username])
+    if (user) && (user.password == params[:password])
+        session[:user_id] = user.id
+        redirect '/dashboard'
+    else
+        flash[:si_error] = "Something went wrong! Try again"
+        redirect '/signin'
+    end
 end
 
 get '/signup' do
@@ -24,7 +31,7 @@ end
 
 post '/signup' do
     if User.find_by(username: params[:username])
-        flash[:error] = "User already exists! Try again"
+        flash[:su_error] = "User already exists! Try again"
         redirect '/signup'
     else
         user = User.create(
@@ -45,6 +52,7 @@ post '/dashboard' do
 end
 
 post '/signout' do
+    session[:user_id] = nil
     redirect '/'
 end
 
