@@ -11,11 +11,15 @@
 <body>
     <header>
         <nav>
-            <a href="/">Home</a>
-            <a href="/signin">Sign In</a>
-            <a href="/signup">Sign Up</a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/profile">Profile</a>
+            <% unless session[:user_id] %>
+                <a href="/">Home</a>
+                <a href="/signin">Sign In</a>
+                <a href="/signup">Sign Up</a>
+            <% else %>
+                <a href="/dashboard">Home</a>
+                <a href="/profile">Profile</a>
+                <a href="/signout">Sign Out</a>
+            <% end %>
         </nav>
     </header>
 

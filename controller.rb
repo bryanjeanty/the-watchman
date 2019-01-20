@@ -3,6 +3,9 @@ require 'sinatra/activerecord'
 require 'sinatra/flash'
 require './models'
 
+enable :sessions
+
+
 get '/' do
     erb(:index)
 end
