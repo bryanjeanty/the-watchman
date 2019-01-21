@@ -37,7 +37,11 @@ post '/signup' do
         user = User.create(
             username: params[:username],
             password: params[:password],
-            updated: Time.now
+            updated: Time.now,
+            first_name: params[:first_name],
+            last_name: params[:last_name],
+            email: params[:email],
+            birthday: params[:birthday]
         )
         session[:user_id] = user.id
         redirect '/dashboard'
