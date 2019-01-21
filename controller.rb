@@ -86,8 +86,13 @@ post '/profile' do
         user_id: user.id,
         updated: Time.now
     )
-    
+
     redirect '/profile'
+end
+
+get '/community' do
+    @users = User.all
+    erb(:community)
 end
 
 post '/deleteuser' do
