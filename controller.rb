@@ -145,5 +145,9 @@ get '/community' do
 end
 
 post '/deleteuser' do
+    delete_user = User.find(params[:user_id])
+    delete_user.destroy
+    session[:user_id] = nil
+
     redirect '/'
 end
