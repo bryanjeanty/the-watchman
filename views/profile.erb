@@ -3,6 +3,7 @@
 <p>User Profile Information</p>
 <ul>
     <li>Username: <%= @current_user.username %></li>
+    <img src="<%= @current_user.avatar_url %>" alt="<%= @current_user.username %>'s avatar image">
     <li>Real Name: <%= @current_user.first_name %> <%= @current_user.last_name %></li>
     <li>Email: <%= @current_user.email %></li>
     <li>Birthday: <%= (@current_user.birthday).to_s[0..9] %></li>
@@ -22,6 +23,7 @@
         <div class="post">
             <form action="/deletepost" method="post">
                 <input type="hidden" name="post_id" value="<%= @current_user.posts[i].id %>">
+                <img src="<%= @current_user.posts[i].user.avatar_url %>" alt="<%= @current_user.posts[i].user.username %>'s avatar image">
                 <p><%= @current_user.posts[i].title %> by <%= @current_user.posts[i].user.username %> on <%= (@current_user.posts[i].updated).to_s[0..9] %></p>
                 <p><%= @current_user.posts[i].content %></p>
                 <input type="submit" value="Delete">

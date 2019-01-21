@@ -119,16 +119,19 @@ post '/settings' do
     user = User.find(session[:user_id])
     new_username = params[:username]
     new_password = params[:password]
+    avatar = Avatar.new(params[:first_name], params[:last_name])
+    avatar_url = avatar.get_avatar_url
 
-    if (new_username) && (new_password)
+    if (new_username.length != 0) && (new_password.length != 0)
         user.update(
-            username: params[:username],
-            password: params[:password],
+            username: new_username,
+            password: new_password,
             updated: Time.now,
             first_name: params[:first_name],
             last_name: params[:last_name],
             email: params[:email],
-            birthday: params[:birthday]
+            birthday: params[:birthday],
+            avatar_url: avatar_url
         )
     else
         user.update(
@@ -136,7 +139,8 @@ post '/settings' do
             first_name: params[:first_name],
             last_name: params[:last_name],
             email: params[:email],
-            birthday: params[:birthday]
+            birthday: params[:birthday],
+            avatar_url: avatar_url
         )
     end
     
