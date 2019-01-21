@@ -91,8 +91,12 @@ post '/profile' do
 end
 
 get '/profile/:user_id' do
-    @other_user = User.find(params[:user_id])
-    erb(:other_profile)
+    if params[:user_id].to_i == session[:user_id]
+        redirect '/profile'
+    else
+        @other_user = User.find(params[:user_id])
+        erb(:other_profile)
+    end
 end
 
 get '/community' do
