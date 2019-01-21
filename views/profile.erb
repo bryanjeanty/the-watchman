@@ -20,8 +20,12 @@
 <div class="posts">
     <% for i in (@current_user.posts.length-1).downto(0) %>
         <div class="post">
-            <p><%= @current_user.posts[i].title %> by <%= @current_user.posts[i].user.username %> on <%= (@current_user.posts[i].updated).to_s[0..9] %></p>
-            <p><%= @current_user.posts[i].content %></p>
+            <form action="/deletepost" method="post">
+                <input type="hidden" name="post_id" value="<%= @current_user.posts[i].id %>">
+                <p><%= @current_user.posts[i].title %> by <%= @current_user.posts[i].user.username %> on <%= (@current_user.posts[i].updated).to_s[0..9] %></p>
+                <p><%= @current_user.posts[i].content %></p>
+                <input type="submit" value="Delete">
+            </form>
         </div>
     <% end %>
 </div>

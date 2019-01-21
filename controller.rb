@@ -67,6 +67,13 @@ post '/dashboard' do
     redirect '/dashboard'
 end
 
+post '/deletepost' do
+    current_post = Post.find(params[:post_id])
+    current_post.destroy
+
+    redirect '/profile'
+end
+
 get '/signout' do
     session[:user_id] = nil
     redirect '/'
