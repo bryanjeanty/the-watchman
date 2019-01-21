@@ -8,7 +8,7 @@
     <% @users.each do |user| %>
     <tr style="border: 1px solid black">
         <td style="border: 1px solid black"><%= user.id %></td>
-        <td style="border: 1px solid black"><%= user.username %></td>
+        <td style="border: 1px solid black"><a href="/profile/<%= user.id %>"><%= user.username %></a></td>
     </tr>
     <% end %>
 </table>

@@ -90,6 +90,11 @@ post '/profile' do
     redirect '/profile'
 end
 
+get '/profile/:user_id' do
+    @other_user = User.find(params[:user_id])
+    erb(:other_profile)
+end
+
 get '/community' do
     @users = User.all
     erb(:community)

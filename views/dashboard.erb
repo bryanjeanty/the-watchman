@@ -13,7 +13,7 @@
     <input type="submit" value="Submit">
 </form>
 
-<div id="posts">
+<div class="posts">
     <% for i in (@posts.length-1).downto(0) %>
         <div class="post">
             <p><%= @posts[i].title %> by <%= @posts[i].user.username %> on <%= (@posts[i].updated).to_s[0..9] %></p>
