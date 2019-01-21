@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 require './models'
+require './avatar'
 
 enable :sessions
 
@@ -34,6 +35,8 @@ post '/signup' do
         flash[:su_error] = "User already exists! Try again"
         redirect '/signup'
     else
+        avatar = Avatar.new(params[:first_name], params[:last_name])
+        avatar_url = avatar.get_avatar_url
         user = User.create(
             username: params[:username],
             password: params[:password],
@@ -41,7 +44,8 @@ post '/signup' do
             first_name: params[:first_name],
             last_name: params[:last_name],
             email: params[:email],
-            birthday: params[:birthday]
+            birthday: params[:birthday],
+            avatar_url: avatar_url
         )
         session[:user_id] = user.id
         redirect '/dashboard'

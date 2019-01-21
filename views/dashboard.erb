@@ -3,6 +3,7 @@
 <p>User Profile Information</p>
 <ul>
     <li>Username: <%= @current_user.username %></li>
+    <img src="<%= @current_user.avatar_url %>" alt="<%= @current_user.username %>'s avatar image">
     <li><a href="/profile">User Profile</a></li>
 </ul>
 
@@ -16,6 +17,7 @@
 <div class="posts">
     <% for i in (@posts.length-1).downto(0) %>
         <div class="post">
+            <img src="<%= @posts[i].user.avatar_url %>" alt="<%= @posts[i].user.username %>'s avatar image'">
             <p><%= @posts[i].title %> by <a href="/profile/<%= @posts[i].user.id %>"><%= @posts[i].user.username %></a> on <%= (@posts[i].updated).to_s[0..9] %></p>
             <p><%= @posts[i].content %></p>
         </div>
