@@ -50,10 +50,20 @@ end
 
 get '/dashboard' do
     @current_user = User.find(session[:user_id])
+    @posts = Post.all
     erb(:dashboard)
 end
 
 post '/dashboard' do
+    user = User.find(session[:user_id])
+
+    post = Post.create(
+        title: params[:title],
+        content: params[:content],
+        users_id: user.id,
+        updated: Time.now
+    )
+
     redirect '/dashboard'
 end
 

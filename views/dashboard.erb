@@ -1,5 +1,6 @@
 <h1>The Watchman Dashboard</h1>
 
+<p>User Profile Information</p>
 <ul>
     <li>Username: <%= @current_user.username %></li>
     <li>Real Name: <%= @current_user.first_name %> <%= @current_user.last_name %></li>
@@ -7,3 +8,19 @@
     <li>Birthday: <%= @current_user.birthday %></li>
     <li><a href="/profile">User Profile</a></li>
 </ul>
+
+<p>Posts</p>
+<form action="/dashboard" method="post">
+    <input type="text" name="title" placeholder="Title">
+    <textarea name="content" cols="30" rows="10" placeholder="Content..."></textarea>
+    <input type="submit" value="Submit">
+</form>
+
+<div id="posts">
+    <% @posts.each do |post| %>
+        <div class="post">
+            <p><%= post.title %> by <%= post.users_id %> on <%= post.updated %></p>
+            <p><%= post.content %></p>
+        </div>
+    <% end %>
+</div>
