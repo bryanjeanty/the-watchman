@@ -1,0 +1,26 @@
+<h2><%= @current_user.username %>'s Profile</h2>
+
+<p>User Profile Information</p>
+<ul>
+    <li>Username: <%= @current_user.username %></li>
+    <li>Real Name: <%= @current_user.first_name %> <%= @current_user.last_name %></li>
+    <li>Email: <%= @current_user.email %></li>
+    <li>Birthday: <%= @current_user.birthday %></li>
+    <li><a href="/profile">Settings</a></li>
+</ul>
+
+<p><%= @current_user.username %>'s Posts</p>
+<form action="/profile" method="post">
+    <input type="text" name="title" placeholder="Title">
+    <textarea name="content" cols="30" rows="10" placeholder="Content..."></textarea>
+    <input type="submit" value="Submit">
+</form>
+
+<div id="posts">
+    <% for i in (@current_user.posts.length-1).downto(0) %>
+        <div class="post">
+            <p><%= @current_user.posts[i].title %> by <%= @current_user.posts[i].user.username %> on <%= (@current_user.posts[i].updated).to_s[0..9] %></p>
+            <p><%= @current_user.posts[i].content %></p>
+        </div>
+    <% end %>
+</div>

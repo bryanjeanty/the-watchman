@@ -73,7 +73,21 @@ get '/signout' do
 end
 
 get '/profile' do
+    @current_user = User.find(session[:user_id])
     erb(:profile)
+end
+
+post '/profile' do
+    user = User.find(session[:user_id])
+
+    post = Post.create(
+        title: params[:title],
+        content: params[:content],
+        user_id: user.id,
+        updated: Time.now
+    )
+    
+    redirect '/profile'
 end
 
 post '/deleteuser' do
