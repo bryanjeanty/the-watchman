@@ -49,6 +49,7 @@ post '/signup' do
 end
 
 get '/dashboard' do
+    @current_user = User.find(session[:user_id])
     erb(:dashboard)
 end
 
