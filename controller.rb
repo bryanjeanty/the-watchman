@@ -60,7 +60,7 @@ post '/dashboard' do
     post = Post.create(
         title: params[:title],
         content: params[:content],
-        users_id: user.id,
+        user_id: user.id,
         updated: Time.now
     )
 

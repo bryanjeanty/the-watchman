@@ -19,7 +19,7 @@
 <div id="posts">
     <% @posts.each do |post| %>
         <div class="post">
-            <p><%= post.title %> by <%= post.users_id %> on <%= post.updated %></p>
+            <p><%= post.title %> by <%= post.user_id %> on <%= post.updated %></p>
             <p><%= post.content %></p>
         </div>
     <% end %>
