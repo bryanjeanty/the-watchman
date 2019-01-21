@@ -106,16 +106,28 @@ end
 
 post '/settings' do
     user = User.find(session[:user_id])
+    new_username = params[:username]
+    new_password = params[:password]
 
-    user.update(
-        username: params[:username],
-        password: params[:password],
-        updated: Time.now,
-        first_name: params[:first_name],
-        last_name: params[:last_name],
-        email: params[:email],
-        birthday: params[:birthday]
-    )
+    if (new_username) && (new_password)
+        user.update(
+            username: params[:username],
+            password: params[:password],
+            updated: Time.now,
+            first_name: params[:first_name],
+            last_name: params[:last_name],
+            email: params[:email],
+            birthday: params[:birthday]
+        )
+    else
+        user.update(
+            updated: Time.now,
+            first_name: params[:first_name],
+            last_name: params[:last_name],
+            email: params[:email],
+            birthday: params[:birthday]
+        )
+    end
     
     redirect '/profile'
 end
