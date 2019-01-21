@@ -1,0 +1,15 @@
+<h2><%= @current_user.username %>'s Settings</h2>
+
+<form action="/settings" method="post">
+    <p>Personal:</p>
+    <input type="text" name="first_name" placeholder="First Name">
+    <input type="text" name="last_name" placeholder="Last Name">
+    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="birthday" placeholder="Birthday">
+    <hr>
+    <p>Profile:</p>
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <hr>
+    <input type="submit" value="Submit">
+</form>

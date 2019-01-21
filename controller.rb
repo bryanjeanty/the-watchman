@@ -99,6 +99,27 @@ get '/profile/:user_id' do
     end
 end
 
+get '/settings' do
+    @current_user = User.find(session[:user_id])
+    erb(:settings)
+end
+
+post '/settings' do
+    user = User.find(session[:user_id])
+
+    user.update(
+        username: params[:username],
+        password: params[:password],
+        updated: Time.now,
+        first_name: params[:first_name],
+        last_name: params[:last_name],
+        email: params[:email],
+        birthday: params[:birthday]
+    )
+    
+    redirect '/profile'
+end
+
 get '/community' do
     @users = User.all
     erb(:community)
