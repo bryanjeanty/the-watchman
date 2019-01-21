@@ -8,12 +8,6 @@
     <li>Birthday: <%= (@other_user.birthday).to_s[0..9] %></li>
 </ul>
 
-<ul>
-    <li>one</li>
-    <li>two</li>
-    <li>three</li>
-</ul>
-
 <div class="posts">
     <% for i in (@other_user.posts.length-1).downto(0) %>
         <div class="post">
