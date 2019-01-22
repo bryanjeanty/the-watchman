@@ -27,6 +27,19 @@
 nav a {
     margin: 0 30px;
 }
+
+a:hover {
+    text-decoration: none;
+}
+
+::placeholder {
+    color: #e6ac00;
+    opacity: 0.6;
+}
+
+.post-hr {
+    background-color: #e6ac00;
+}
 /* end defaults */
 
 /* color fonts white begins */
@@ -135,10 +148,6 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     margin: 20px 0;
 }
 
-.side-profile, .wall {
-    border: 1px solid black;
-}
-
 .side-profile {
     background-color: #ffffff;
     width: 18%;
@@ -166,5 +175,70 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
 .signout-btn:hover {
     background-color: rgb(216, 35, 35);
     color: #ffffff;
-    text-decoration: none;
 }
+/* side profile ends */
+
+/* wall begins */
+.wall-container {
+    display: flex;
+    width: 80%;
+}
+
+.wall {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+
+.create-posts, .post {
+    background-color: #ffffff;
+    margin: 10px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.wall-img-container {
+    margin: auto;
+    width: 15%;
+    display: flex;
+}
+
+.wall-img-container img {
+    margin: auto;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.wall form, .post-container {
+    width: 80%;
+    margin-right: 0;
+    margin-left: auto;
+    padding: 5px;
+}
+
+.form-container {
+    width: 80%;
+}
+
+.wall .input-field {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#post-btn {
+    float: right;
+    background-color: #e6ac00;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5.5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* wall ends */
+/* dashboard ends */
