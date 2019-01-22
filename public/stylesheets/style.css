@@ -2,10 +2,9 @@
     color scheme:
     1. white = #fff --> post and profile column background color, and header/footer font color
     2. black = #000 --> font color
-    3. eggshell = #f2e9dc --> main background color (option 1)
-    4. eton blue = #91c499 --> main background color (option 2)
-    5. mummy's tomb = #808f85 --> header/footer background color (option 1)
-    6. davy's grey = #595959 --> header/footer background color (option 2)
+    3. eggshell = #f2e9dc --> main background color
+    4. #e6ac00 --> main button color
+    5. #006680 --> header/footer background color
 
     font family scheme:
     1. All text --> code pro 
@@ -24,11 +23,16 @@
     overflow: hidden;
 }
 
-header, footer {
-    background-color: #595959;
+#header-signed-in, footer {
+    background-color: #006680;
     color: #ffffff;
     height: 5vh;
     font-size: 1.2em;
+    text-align: center;
+}
+
+#header-signed-out {
+    display: none;
 }
 
 a, a:hover {
@@ -36,7 +40,36 @@ a, a:hover {
 }
 
 #main-signed-out {
-    background: url(https://images.pexels.com/photos/1123471/pexels-photo-1123471.jpeg?cs=srgb&dl=abundance-art-artistic-1123471.jpg&fm=jpg) center center no-repeat;
+    background: url(https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg?cs=srgb&dl=clean-comfort-contemporary-1444416.jpg&fm=jpg) center center no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 95vh;
+    display: flex;
+}
+
+#main-box {
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 25%;
+    height: 25%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#main-box h1 {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+#signin-box {
+    height: 100%;
+    padding: 30px;
+}
+
+#signin-box a {
+    background-color: #e6ac00;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px;
+    margin: 0 15px;
+    border-radius: 5px;
 }

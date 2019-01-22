@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-    <header>
+    <% unless session[:user_id] %>
+        <header id="header-signed-out">
+    <% else %>
+        <header id="header-signed-in">
+    <% end %>
         <nav>
             <% unless session[:user_id] %>
                 <a href="/">Home</a>
@@ -26,8 +30,13 @@
 
     <% unless session[:user_id] %>
         <main id="main-signed-out">
-            <h1>The Watchman</h1>
-
+            <div id="main-box">
+                <h1>The Watchman</h1>
+                <div id="signin-box">
+                    <a href="/signin">Sign In</a>
+                    <a href="/signup">Sign Up</a>
+                </div>
+            </div>
     <% else %>
         <main id="main-signed-in">
     <% end %>
