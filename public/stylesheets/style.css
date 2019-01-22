@@ -210,14 +210,14 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     border-radius: 50%;
 }
 
-.wall form, .post-container {
+.wall form, .post-align {
     width: 80%;
     margin-right: 0;
     margin-left: auto;
     padding: 5px;
 }
 
-.form-container {
+.form-container, .post-container {
     width: 80%;
 }
 
@@ -238,7 +238,27 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     cursor: pointer;
 }
 
+.post-username {
+    color: #000;
+}
 
+.post-username:hover {
+    color: #e6ac00;
+}
+
+.post-title, .post-date {
+    display: inline-block;
+}
+
+.post-title {
+    color: #006680;
+    font-size: 1.15em;
+    text-transform: capitalize;
+}
+
+.post-date {
+    float: right;
+}
 
 /* wall ends */
 /* dashboard ends */

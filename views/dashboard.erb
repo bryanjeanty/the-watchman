@@ -16,7 +16,7 @@
                 </a>
                 <form action="/dashboard" method="post">
                     <div class="form-container">
-                        <p><strong><%= @current_user.username %></strong></p>
+                        <p><strong><a class="post-username" href="/profile"><%= @current_user.username %></a></strong></p>
                         <input class="input-field" type="text" name="title" placeholder="Title">
                         <br>
                         <textarea class="input-field" name="content" placeholder="Content..."></textarea>
@@ -29,12 +29,16 @@
             <div class="posts">
                 <% for i in (@posts.length-1).downto(0) %>
                     <div class="post">
-                        <a class="wall-img-container" href="/profile/<% @posts[i].user.id %>">
+                        <a class="wall-img-container" href="/profile/<%= @posts[i].user.id %>">
                             <img src="<%= @posts[i].user.avatar_url %>" alt="<%= @posts[i].user.username %>'s avatar image">
                         </a>
-                        <div class="post-container">
-                            <p><%= @posts[i].title %> by <a href="/profile/<%= @posts[i].user.id %>"><%= @posts[i].user.username %></a> on <%= (@posts[i].updated).to_s[0..9] %></p>
-                            <p><%= @posts[i].content %></p>
+                        <div class="post-align">
+                            <div class="post-container">
+                                <p><strong><a class="post-username" href="/profile/<%= @posts[i].user.id %>"><%= @posts[i].user.username %></a></strong></p>
+                                <p class="post-title"><%= @posts[i].title %></p> 
+                                <p class="post-date">published on: <%= (@posts[i].updated).to_s[0..9] %></p>
+                                <p><%= @posts[i].content %></p>
+                            </div>
                         </div>
                     </div>
                 <% end %>
