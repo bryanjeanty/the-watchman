@@ -22,14 +22,18 @@
                 <a href="/signout">Sign Out</a>
             <% end %>
         </nav>
-
-        <h1>The Watchman</h1>
     </header>
 
-    <main>
+    <% unless session[:user_id] %>
+        <main id="main-signed-out">
+            <h1>The Watchman</h1>
+
+    <% else %>
+        <main id="main-signed-in">
+    <% end %>
         <%= yield %>
     </main>
-
+    
     <footer>
         Copyright &copy; 2019 The Watchman, Inc.
     </footer>

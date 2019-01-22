@@ -1,6 +1,42 @@
+/* 
+    color scheme:
+    1. white = #fff --> post and profile column background color, and header/footer font color
+    2. black = #000 --> font color
+    3. eggshell = #f2e9dc --> main background color (option 1)
+    4. eton blue = #91c499 --> main background color (option 2)
+    5. mummy's tomb = #808f85 --> header/footer background color (option 1)
+    6. davy's grey = #595959 --> header/footer background color (option 2)
+
+    font family scheme:
+    1. All text --> code pro 
+       import --> @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+       Specify in css --> font-family: 'Source Code Pro', monospace;
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
+    font-family: 'Source Code Pro', monospace;
+    overflow: hidden;
+}
+
+header, footer {
+    background-color: #595959;
+    color: #ffffff;
+    height: 5vh;
+    font-size: 1.2em;
+}
+
+a, a:hover {
+    color: #ffffff;
+}
+
+#main-signed-out {
+    background: url(https://images.pexels.com/photos/1123471/pexels-photo-1123471.jpeg?cs=srgb&dl=abundance-art-artistic-1123471.jpg&fm=jpg) center center no-repeat;
+    background-size: cover;
+    height: 90vh;
 }
