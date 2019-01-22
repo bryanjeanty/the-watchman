@@ -1,16 +1,17 @@
-<%= flash[:su_error] %>
-
-<h2>Sign Up!</h2>
-<form action="/signup" method="post">
-    <p>Personal:</p>
-    <input type="text" name="first_name" placeholder="First Name">
-    <input type="text" name="last_name" placeholder="Last Name">
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="birthday" placeholder="Birthday">
-    <hr>
-    <p>Profile:</p>
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <hr>
-    <input type="submit" value="Submit">
-</form>
+<div id="signup-box">
+    <%= flash[:su_error] %>
+    <h2 class="signed-out-h2">Sign Up!</h2>
+    <form action="/signup" method="post">
+        <p class="field-labels">Personal:</p>
+        <input class="input-field" type="text" name="first_name" placeholder="First Name">
+        <input class="input-field" type="text" name="last_name" placeholder="Last Name">
+        <input class="input-field" type="text" name="email" placeholder="Email">
+        <input class="input-field" type="text" name="birthday" placeholder="Birthday">
+        <hr>
+        <p class="field-labels">Profile:</p>
+        <input class="input-field" type="text" name="username" placeholder="Username">
+        <input class="input-field" type="password" name="password" placeholder="Password">
+        <hr>
+        <input class="submit-btn" type="submit" value="Submit">
+    </form>
+</div>

@@ -21,8 +21,13 @@
     text-decoration: none;
     list-style: none;
     font-family: 'Source Code Pro', monospace;
-    overflow: hidden;
 }
+
+/* color fonts white begins */
+nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .signed-out-h2, h1, .field-labels {
+    color: #ffffff;
+}
+/* color fonts white ends */
 
 /* Header begins */
 #header-signed-in, footer {
@@ -38,11 +43,6 @@
 }
 /* header ends */
 
-/* All links and headings */
-a, a:hover, h1, h2 {
-    color: #ffffff;
-}
-
 /* main begins */
 #main-signed-out {
     background: url(https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg?cs=srgb&dl=clean-comfort-contemporary-1444416.jpg&fm=jpg) center center no-repeat;
@@ -54,8 +54,6 @@ a, a:hover, h1, h2 {
 #main-box {
     margin: auto;
     background-color: rgba(0, 0, 0, 0.75);
-    /* width: 25%;
-    height: 25%; */
     text-align: center;
     border-radius: 5px;
 }
@@ -101,3 +99,13 @@ a, a:hover, h1, h2 {
     border-radius: 5px;
 }
 /* signin ends */
+
+/* signup begins */
+#signup-box {
+    padding: 5px 30px 20px 30px;
+}
+
+#signup-box hr {
+    background-color: #ffffff;
+}
+/* signup ends */

@@ -31,7 +31,7 @@
     <% unless session[:user_id] %>
         <main id="main-signed-out">
             <div id="main-box">
-                <h1><a href="/">The Watchman</a></h1>
+                <h1><a id="signed-out-h1" href="/">The Watchman</a></h1>
                 <%= yield %>
             </div>
     <% else %>
