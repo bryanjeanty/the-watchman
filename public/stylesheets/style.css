@@ -14,6 +14,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
+/* Everything */
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +24,7 @@
     overflow: hidden;
 }
 
+/* Header begins */
 #header-signed-in, footer {
     background-color: #006680;
     color: #ffffff;
@@ -34,11 +36,14 @@
 #header-signed-out {
     display: none;
 }
+/* header ends */
 
-a, a:hover {
+/* All links and headings */
+a, a:hover, h1, h2 {
     color: #ffffff;
 }
 
+/* main begins */
 #main-signed-out {
     background: url(https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg?cs=srgb&dl=clean-comfort-contemporary-1444416.jpg&fm=jpg) center center no-repeat;
     background-size: cover;
@@ -49,23 +54,23 @@ a, a:hover {
 #main-box {
     margin: auto;
     background-color: rgba(0, 0, 0, 0.75);
-    width: 25%;
-    height: 25%;
+    /* width: 25%;
+    height: 25%; */
     text-align: center;
     border-radius: 5px;
 }
 
 #main-box h1 {
-    color: #ffffff;
     font-weight: 900;
+    margin-bottom: -2px;
 }
 
-#signin-box {
+#main-btns-box {
     height: 100%;
     padding: 30px;
 }
 
-#signin-box a {
+#main-btns-box a {
     background-color: #e6ac00;
     font-weight: bold;
     font-size: 1.1em;
@@ -73,3 +78,26 @@ a, a:hover {
     margin: 0 15px;
     border-radius: 5px;
 }
+/* main ends */
+
+/* signin begins */
+#signin-box {
+    padding: 5px 30px 20px 30px;
+}
+
+.input-field {
+    border: 1px solid #e6ac00;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.submit-btn {
+    border: none;
+    background-color: #e6ac00;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px;
+    border-radius: 5px;
+}
+/* signin ends */
