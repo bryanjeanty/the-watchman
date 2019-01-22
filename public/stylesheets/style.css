@@ -2,7 +2,7 @@
     color scheme:
     1. white = #fff --> post and profile column background color, and header/footer font color
     2. black = #000 --> font color
-    3. eggshell = #f2e9dc --> main background color
+    3. #eff5f5 --> main background color
     4. #e6ac00 --> main button color
     5. #006680 --> header/footer background color
 
@@ -23,11 +23,11 @@
     font-family: 'Source Code Pro', monospace;
 }
 
-/* signed in nav bar begins */
+/* begin defaults*/
 nav a {
     margin: 0 30px;
 }
-/* signed in nav bar ends */
+/* end defaults */
 
 /* color fonts white begins */
 nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .signed-out-h2, h1, .field-labels {
@@ -126,3 +126,45 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
 /* main signed in ends */
 
 /* dashboard begins */
+#dashboard-sect {
+    display: flex;
+}
+
+/* side profile begins */
+.signed-in-h4 {
+    margin: 20px 0;
+}
+
+.side-profile, .wall {
+    border: 1px solid black;
+}
+
+.side-profile {
+    background-color: #ffffff;
+    width: 18%;
+    text-align: center;
+}
+
+.side-profile ul li {
+    margin: 12px 0;
+}
+
+.side-profile img {
+    border-radius: 5px;
+}
+
+.signout-btn {
+    background-color: #e6ac00;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5.5px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.signout-btn:hover {
+    background-color: rgb(216, 35, 35);
+    color: #ffffff;
+    text-decoration: none;
+}

@@ -1,25 +1,31 @@
-<h2>Dashboard</h2>
+<div id="dashboard-sect">
+    <div class="side-profile">
+        <h4 class="signed-in-h4">Dashboard</h4>
+        <ul>
+            <li><%= @current_user.username %></li>
+            <a href="/profile"><img src="<%= @current_user.avatar_url %>" alt="<%= @current_user.username %>'s avatar image"></a>
+            <li><a class="signout-btn" href="/signout">Sign Out</a></li>
+        </ul>
+    </div>
 
-<p>User Profile Information</p>
-<ul>
-    <li>Username: <%= @current_user.username %></li>
-    <img src="<%= @current_user.avatar_url %>" alt="<%= @current_user.username %>'s avatar image">
-    <li><a href="/profile">User Profile</a></li>
-</ul>
+    <div class="wall-container">
+        <div class="wall">
+            <p>All Posts</p>
+            <form action="/dashboard" method="post">
+                <input type="text" name="title" placeholder="Title">
+                <textarea name="content" cols="30" rows="10" placeholder="Content..."></textarea>
+                <input type="submit" value="Submit">
+            </form>
 
-<p>All Posts</p>
-<form action="/dashboard" method="post">
-    <input type="text" name="title" placeholder="Title">
-    <textarea name="content" cols="30" rows="10" placeholder="Content..."></textarea>
-    <input type="submit" value="Submit">
-</form>
-
-<div class="posts">
-    <% for i in (@posts.length-1).downto(0) %>
-        <div class="post">
-            <img src="<%= @posts[i].user.avatar_url %>" alt="<%= @posts[i].user.username %>'s avatar image">
-            <p><%= @posts[i].title %> by <a href="/profile/<%= @posts[i].user.id %>"><%= @posts[i].user.username %></a> on <%= (@posts[i].updated).to_s[0..9] %></p>
-            <p><%= @posts[i].content %></p>
+            <div class="posts">
+                <% for i in (@posts.length-1).downto(0) %>
+                    <div class="post">
+                        <img src="<%= @posts[i].user.avatar_url %>" alt="<%= @posts[i].user.username %>'s avatar image">
+                        <p><%= @posts[i].title %> by <a href="/profile/<%= @posts[i].user.id %>"><%= @posts[i].user.username %></a> on <%= (@posts[i].updated).to_s[0..9] %></p>
+                        <p><%= @posts[i].content %></p>
+                    </div>
+                <% end %>
+            </div>
         </div>
-    <% end %>
+    </div>
 </div>
