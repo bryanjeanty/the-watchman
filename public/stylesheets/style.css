@@ -23,6 +23,12 @@
     font-family: 'Source Code Pro', monospace;
 }
 
+/* signed in nav bar begins */
+nav a {
+    margin: 0 30px;
+}
+/* signed in nav bar ends */
+
 /* color fonts white begins */
 nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .signed-out-h2, h1, .field-labels {
     color: #ffffff;
@@ -43,7 +49,7 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
 }
 /* header ends */
 
-/* main begins */
+/* main signed out begins */
 #main-signed-out {
     background: url(https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg?cs=srgb&dl=clean-comfort-contemporary-1444416.jpg&fm=jpg) center center no-repeat;
     background-size: cover;
@@ -51,14 +57,14 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     display: flex;
 }
 
-#main-box {
+#main-box-signed-out {
     margin: auto;
     background-color: rgba(0, 0, 0, 0.75);
     text-align: center;
     border-radius: 5px;
 }
 
-#main-box h1 {
+#signed-out-h1 {
     font-weight: 900;
     margin-bottom: -2px;
 }
@@ -76,13 +82,25 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     margin: 0 15px;
     border-radius: 5px;
 }
-/* main ends */
+/* main signed out ends */
 
 /* signin begins */
 #signin-box {
     padding: 5px 30px 20px 30px;
 }
+/* signin ends */
 
+/* signup begins */
+#signup-box {
+    padding: 5px 30px 20px 30px;
+}
+
+#signup-box hr {
+    background-color: #ffffff;
+}
+/* signup ends */
+
+/* signed out form begins */
 .input-field {
     border: 1px solid #e6ac00;
     border-radius: 5px;
@@ -98,14 +116,13 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     padding: 5px;
     border-radius: 5px;
 }
-/* signin ends */
+/* signed out form ends */
 
-/* signup begins */
-#signup-box {
-    padding: 5px 30px 20px 30px;
+/* main signed in begins */
+#main-box-signed-in {
+    background-color: #eff5f5;
+    height: 100%;
 }
+/* main signed in ends */
 
-#signup-box hr {
-    background-color: #ffffff;
-}
-/* signup ends */
+/* dashboard begins */
