@@ -1,5 +1,5 @@
 <div id="signin-box">
-    <%= flash[:si_error] %>
+    <p style="color: white"><%= flash[:si_error] %></p>
     <h2 class="signed-out-h2">Sign In!</h2>
     <form action="/signin" method="post">
         <input class="input-field" type="text" name="username" placeholder="username" required>

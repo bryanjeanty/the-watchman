@@ -6,3 +6,8 @@ down_btn.addEventListener('click', (event) => {
     post_page.style.display = "block";
     count += 1;
 });
+
+let signout_btn = document.querySelector('.signout-btn');
+signout_btn.addEventListener('click', (event) => {
+    alert("We'll miss you 😢!");
+});
