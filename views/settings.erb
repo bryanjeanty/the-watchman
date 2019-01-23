@@ -1,20 +1,23 @@
-<h2><%= @current_user.username %>'s Settings</h2>
+<div id="settings-sect-flex">
+    <div id="settings-sect">
+        <h2><%= @current_user.username %>'s Settings</h2>
+        <form action="/settings" method="post">
+            <p>Personal:</p>
+            <input class="input-field" type="text" name="first_name" placeholder="First Name">
+            <input class="input-field" type="text" name="last_name" placeholder="Last Name">
+            <input class="input-field" type="text" name="email" placeholder="Email">
+            <input class="input-field" type="text" name="birthday" placeholder="Birthday">
+            <hr>
+            <p>Profile:</p>
+            <input class="input-field" type="text" name="username" placeholder="Username">
+            <input class="input-field" type="password" name="password" placeholder="Password">
+            <hr>
+            <input class="submit-btn set-sub-btn" type="submit" value="Submit">
+        </form>
 
-<form action="/settings" method="post">
-    <p>Personal:</p>
-    <input type="text" name="first_name" placeholder="First Name">
-    <input type="text" name="last_name" placeholder="Last Name">
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="birthday" placeholder="Birthday">
-    <hr>
-    <p>Profile:</p>
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <hr>
-    <input type="submit" value="Submit">
-</form>
-
-<form action="/deleteuser" method="post">
-    <input type="hidden" name="user_id" value="<%= @current_user.id %>">
-    <input type="submit" value="Delete">
-</form>
+        <form action="/deleteuser" method="post">
+            <input type="hidden" name="user_id" value="<%= @current_user.id %>">
+            <input class="submit-btn delete-acct" type="submit" value="Delete Account">
+        </form>
+    </div>
+</div>

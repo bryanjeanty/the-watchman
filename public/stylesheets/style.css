@@ -128,6 +128,7 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     font-size: 1.1em;
     padding: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 /* signed out form ends */
 
@@ -241,6 +242,10 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     cursor: pointer;
 }
 
+.post-btn:hover {
+    background-color: rgb(11, 167, 11);
+}
+
 .delete-btn:hover {
     background-color: rgb(216, 35, 35);
     color: #ffffff;
@@ -319,3 +324,31 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     width: 15%;
 }
 /* community ends */
+
+/* settings begins */
+#settings-sect-flex {
+    display: flex;
+}
+
+#settings-sect {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+    padding-top: 120px;
+}
+
+#settings-sect h2 {
+    font-weight: bold;
+}
+
+.set-sub-btn:hover {
+    background-color: rgb(11, 167, 11);
+}
+
+.delete-acct {
+    margin-top: 50px;
+}
+
+.delete-acct:hover {
+    background-color: rgb(216, 35, 35);
+}
