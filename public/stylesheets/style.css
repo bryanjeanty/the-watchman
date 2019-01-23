@@ -140,8 +140,9 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
 /* main signed in ends */
 
 /* dashboard begins */
-#dashboard-sect {
+#dashboard-sect, #profile-sect, #other-profile-sect {
     display: flex;
+    min-height: 90vh;
 }
 
 /* side profile begins */
@@ -269,14 +270,3 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
 
 /* wall ends */
 /* dashboard ends */
-
-/* profile begins */
-/* pro-side-profile begins */
-#profile-sect {
-    display: flex;
-}
-/* pro-side-profile ends */
-/* pro-wall begins */
-
-/* pro-wall ends */
-/* profile ends */

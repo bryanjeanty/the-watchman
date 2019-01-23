@@ -1,20 +1,35 @@
-<h2><%= @other_user.username %>'s Profile</h2>
+<div id="other-profile-sect">
+    <div class="side-profile">
+        <h4 class="signed-in-h4"><%= @other_user.username %>'s Profile</h4>
+        <ul>
+            <a href="/profile/<%= @other_user.id %>">
+                <img src="<%= @other_user.avatar_url %>" alt="<%= @other_user.username %>'s avatar image">
+            </a>
+            <li>Real Name: <%= @other_user.first_name %> <%= @other_user.last_name %></li>
+            <li>Email: <%= (@other_user.email).to_s[0..9]+"..." %></li>
+            <li>Birthday: <%= (@other_user.birthday).to_s[0..9] %></li>
+        </ul>
+    </div>
 
-<p>User Profile Information</p>
-<ul>
-    <li>Username: <%= @other_user.username %></li>
-    <img src="<%= @other_user.avatar_url %>" alt="<%= @other_user.username %>'s avatar image">
-    <li>Real Name: <%= @other_user.first_name %> <%= @other_user.last_name %></li>
-    <li>Email: <%= @other_user.email %></li>
-    <li>Birthday: <%= (@other_user.birthday).to_s[0..9] %></li>
-</ul>
-
-<div class="posts">
-    <% for i in (@other_user.posts.length-1).downto(0) %>
-        <div class="post">
-            <img src="<%= @other_user.posts[i].user.avatar_url %>" alt="<%= @other_user.posts[i].user.username %>'s avatar image">
-            <p><%= @other_user.posts[i].title %> by <%= @other_user.posts[i].user.username %> on <%= (@other_user.posts[i].updated).to_s[0..9] %></p>
-            <p><%= @other_user.posts[i].content %></p>
+    <div class="wall-container">
+        <div class="wall">
+            <div class="posts">
+                <% for i in (@other_user.posts.length-1).downto(0) %>
+                    <div class="post">
+                        <a class="wall-img-container" href="/profile/<%= @other_user.posts[i].user.id %>">
+                            <img src="<%= @other_user.posts[i].user.avatar_url %>" alt="<%= @other_user.posts[i].user.username %>'s avatar image">
+                        </a>
+                        <div class="post-align">
+                            <div class="post-container">
+                                <p><strong><a class="post-username" href="/profile/<%= @other_user.posts[i].user.id %>"><%= @other_user.posts[i].user.username %></a></strong></p>
+                                <p class="post-title"><%= @other_user.posts[i].title %></p> 
+                                <p class="post-date">published on: <%= (@other_user.posts[i].updated).to_s[0..9] %></p>
+                                <p><%= @other_user.posts[i].content %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
         </div>
-    <% end %>
+    </div>
 </div>

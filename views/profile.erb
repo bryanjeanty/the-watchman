@@ -1,8 +1,7 @@
 <div id="profile-sect">
     <div class="side-profile">
-        <h4 class="signed-in-h4">Your Profile</h4>
+        <h4 class="signed-in-h4"><%= @current_user.username %>'s Profile</h4>
         <ul>
-            <li><%= @current_user.username %></li>
             <a href="/profile"><img src="<%= @current_user.avatar_url %>" alt="<%= @current_user.username %>'s avatar image"></a>
             <li>Real Name: <%= @current_user.first_name %> <%= @current_user.last_name %></li>
             <li>Email: <%= (@current_user.email).to_s[0..9]+"..." %></li>
