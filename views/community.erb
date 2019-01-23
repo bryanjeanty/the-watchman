@@ -1,14 +1,21 @@
-<h2>The Watchman Community</h2>
-
-<table style="border: 1px solid black">
-    <tr style="border: 1px solid black">
-        <th style="border: 1px solid black">Profile Image</th>
-        <th style="border: 1px solid black">Username</th>
-    </tr>
-    <% @users.each do |user| %>
-    <tr style="border: 1px solid black">
-        <td style="border: 1px solid black"><img src="<%= user.avatar_url %>" alt="<%= user.username %>'s Avatar"></td>
-        <td style="border: 1px solid black"><a href="/profile/<%= user.id %>"><%= user.username %></a></td>
-    </tr>
-    <% end %>
-</table>
+<div id="community-container-flex">
+    <div id="community-container">
+        <h2>The Watchman Community</h2>
+        <table style="border: 5px solid #eff5f5">
+            <tr style="border: 5px solid #eff5f5">
+                <th colspan="2" style="border: 5px solid #eff5f5">All Users</th>
+            </tr>
+            <% @users.each do |user| %>
+            <tr style="border: 5px solid #eff5f5">
+                <td style="border: 5px solid #eff5f5" colspan="2">
+                    <a href="/profile/<%= user.id %>">
+                        <img src="<%= user.avatar_url %>" alt="<%= user.username %>'s Avatar">
+                    </a>
+                    <a href="/profile/<%= user.id %>"><%= user.username %></a>
+                </td>
+                <%# <td style="border: 1px solid black"><a href="/profile/<%= user.id %><%#%"><%= user.username </a></td> %>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+</div>
