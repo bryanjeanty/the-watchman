@@ -1,33 +1,54 @@
-<h2><%= @current_user.username %>'s Profile</h2>
+<div id="profile-sect">
+    <div class="side-profile">
+        <h4 class="signed-in-h4">Your Profile</h4>
+        <ul>
+            <li><%= @current_user.username %></li>
+            <a href="/profile"><img src="<%= @current_user.avatar_url %>" alt="<%= @current_user.username %>'s avatar image"></a>
+            <li>Real Name: <%= @current_user.first_name %> <%= @current_user.last_name %></li>
+            <li>Email: <%= (@current_user.email).to_s[0..9]+"..." %></li>
+            <li>Birthday: <%= (@current_user.birthday).to_s[0..9] %></li>
+            <li>Updated: <%= (@current_user.updated).to_s[0..9] %></li>
+            <li><a class="signout-btn" href="/signout">Sign Out</a></li>
+        </ul>
+    </div>
 
-<p>User Profile Information</p>
-<ul>
-    <li>Username: <%= @current_user.username %></li>
-    <img src="<%= @current_user.avatar_url %>" alt="<%= @current_user.username %>'s avatar image">
-    <li>Real Name: <%= @current_user.first_name %> <%= @current_user.last_name %></li>
-    <li>Email: <%= @current_user.email %></li>
-    <li>Birthday: <%= (@current_user.birthday).to_s[0..9] %></li>
-    <li>Updated: <%= (@current_user.updated).to_s[0..9] %></li>
-    <li><a href="/settings">Settings</a></li>
-</ul>
-
-<p><%= @current_user.username %>'s Posts</p>
-<form action="/profile" method="post">
-    <input type="text" name="title" placeholder="Title">
-    <textarea name="content" cols="30" rows="10" placeholder="Content..."></textarea>
-    <input type="submit" value="Submit">
-</form>
-
-<div class="posts">
-    <% for i in (@current_user.posts.length-1).downto(0) %>
-        <div class="post">
-            <form action="/deletepost" method="post">
-                <input type="hidden" name="post_id" value="<%= @current_user.posts[i].id %>">
-                <img src="<%= @current_user.posts[i].user.avatar_url %>" alt="<%= @current_user.posts[i].user.username %>'s avatar image">
-                <p><%= @current_user.posts[i].title %> by <%= @current_user.posts[i].user.username %> on <%= (@current_user.posts[i].updated).to_s[0..9] %></p>
-                <p><%= @current_user.posts[i].content %></p>
-                <input type="submit" value="Delete">
+    <div class="wall-container">
+        <div class="wall">
+            <div class="create-posts">
+            <a class="wall-img-container" href="/profile">
+                <img src="<%= @current_user.avatar_url %>" alt="<%= @current_user.username %>'s avatar image">
+            </a>
+            <form action="/profile" method="post">
+                <div class="form-container">
+                    <p><strong><a class="post-username" href="/profile"><%= @current_user.username %></a></strong></p>
+                    <input class="input-field" type="text" name="title" placeholder="Title">
+                    <br>
+                    <textarea class="input-field" name="content" placeholder="Content..."></textarea>
+                    <hr class="post-hr">
+                    <input class="post-btn" type="submit" value="Post">
+                </div>
             </form>
+            </div>
+
+            <div class="posts">
+                <% for i in (@current_user.posts.length-1).downto(0) %>
+                    <div class="post">
+                        <a class="wall-img-container" href="/profile/<%= @current_user.posts[i].user.id %>">
+                            <img src="<%= @current_user.posts[i].user.avatar_url %>" alt="<%= @current_user.posts[i].user.username %>'s avatar image">
+                        </a>
+                        <div class="post-align">
+                            <form class="post-container" action="/deletepost" method="post">
+                                <input type="hidden" name="post_id" value="<%= @current_user.posts[i].id %>">
+                                <p><strong><a class="post-username" href="/profile/<%= @current_user.posts[i].user.id %>"><%= @current_user.posts[i].user.username %></a></strong></p>
+                                <p class="post-title"><%= @current_user.posts[i].title %></p> 
+                                <p class="post-date">published on: <%= (@current_user.posts[i].updated).to_s[0..9] %></p>
+                                <p><%= @current_user.posts[i].content %></p>
+                                <input class="delete-btn" type="submit" value="Delete">
+                            </form>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
         </div>
-    <% end %>
+    </div>
 </div>

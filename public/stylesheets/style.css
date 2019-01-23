@@ -135,6 +135,7 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
 #main-box-signed-in {
     background-color: #eff5f5;
     height: 100%;
+    min-height: 90vh;
 }
 /* main signed in ends */
 
@@ -219,6 +220,7 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
 
 .form-container, .post-container {
     width: 80%;
+    float: left;
 }
 
 .wall .input-field {
@@ -226,7 +228,7 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     width: 100%;
 }
 
-#post-btn {
+.post-btn, .delete-btn {
     float: right;
     background-color: #e6ac00;
     color: #ffffff;
@@ -236,6 +238,11 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: rgb(216, 35, 35);
+    color: #ffffff;
 }
 
 .post-username {
@@ -262,3 +269,14 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
 
 /* wall ends */
 /* dashboard ends */
+
+/* profile begins */
+/* pro-side-profile begins */
+#profile-sect {
+    display: flex;
+}
+/* pro-side-profile ends */
+/* pro-wall begins */
+
+/* pro-wall ends */
+/* profile ends */
