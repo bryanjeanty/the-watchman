@@ -273,6 +273,28 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
     float: right;
 }
 /* wall ends */
+
+/* down-button begins */
+.down-btn {
+    border: 1px solid black;
+    background-color: #006680;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    width: 87.5%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.down-btn:hover {
+    width: 88%;
+}
+
+.down-btn img {
+    width: 40px;
+}
+
+/* down-button ends */
 /* dashboard/profiles ends */
 
 /* community begins */
@@ -352,3 +374,4 @@ nav a, nav a:hover, #signed-out-h1, #main-btns-box a, #main-btns-box a:hover, .s
 .delete-acct:hover {
     background-color: rgb(216, 35, 35);
 }
+/* settings ends */

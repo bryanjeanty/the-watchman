@@ -1,3 +1,4 @@
+
 <div id="dashboard-sect">
     <div class="side-profile">
         <h4 class="signed-in-h4">Dashboard</h4>
@@ -26,22 +27,36 @@
                 </form>
             </div>
 
-            <div class="posts">
-                <% for i in (@posts.length-1).downto(0) %>
-                    <div class="post">
-                        <a class="wall-img-container" href="/profile/<%= @posts[i].user.id %>">
-                            <img src="<%= @posts[i].user.avatar_url %>" alt="<%= @posts[i].user.username %>'s avatar image">
-                        </a>
-                        <div class="post-align">
-                            <div class="post-container">
-                                <p><strong><a class="post-username" href="/profile/<%= @posts[i].user.id %>"><%= @posts[i].user.username %></a></strong></p>
-                                <p class="post-title"><%= @posts[i].title %></p> 
-                                <p class="post-date">published on: <%= (@posts[i].updated).to_s[0..9] %></p>
-                                <p><%= @posts[i].content %></p>
+            <% i = 1 %>
+            <% while (i <= (@posts.length / 5).ceil) %>
+                <% count = 0 %>
+                <div class="posts-<%= i %>">
+                    <% for i in (@posts.length-1).downto(0) %>
+                        <% count += 1 %>
+                        <div class="post">
+                            <a class="wall-img-container" href="/profile/<%= @posts[i].user.id %>">
+                                <img src="<%= @posts[i].user.avatar_url %>" alt="<%= @posts[i].user.username %>'s avatar image">
+                            </a>
+                            <div class="post-align">
+                                <div class="post-container">
+                                    <p><strong><a class="post-username" href="/profile/<%= @posts[i].user.id %>"><%= @posts[i].user.username %></a></strong></p>
+                                    <p class="post-title"><%= @posts[i].title %></p> 
+                                    <p class="post-date">published on: <%= (@posts[i].updated).to_s[0..9] %></p>
+                                    <p><%= @posts[i].content %></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <% end %>
+                        <% count += 1 %>
+                        <% if (count == 5) %>
+                            <% break %>
+                        <% end %>
+                    <% end %>
+                </div>
+                <% i += 1 %>
+            <% end %>
+
+            <div class="down-btn">
+                <img src="/images/arrow-down-sign-to-navigate.svg" alt="down arrow">
             </div>
         </div>
     </div>
