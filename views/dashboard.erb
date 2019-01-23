@@ -31,7 +31,6 @@
                 <div class="posts-<%= i %>" style="display: none">
                     <% start = (@posts.length-1) - (i*5) %>
                     <% for i in (start).downto(0) %>
-                        <%# count += 1 %>
                         <div class="post">
                             <a class="wall-img-container" href="/profile/<%= @posts[i].user.id %>">
                                 <img src="<%= @posts[i].user.avatar_url %>" alt="<%= @posts[i].user.username %>'s avatar image">
